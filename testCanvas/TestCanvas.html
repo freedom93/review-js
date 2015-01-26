@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html>
+<header>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Htmls5-Canvas</title>
+
+</header>
+<body>
+
+<canvas  id="myCanvas" width="620" height="300" style="border:1px solid #c3c3c3;" onmousemove="cnvs_getCoordinates(event)" onmouseout="cnvs_clearCoordinates()">
+Your browser does not support the canvas element.
+</canvas>
+
+<canvas  id="myCanvas3" width="620" height="300" style="border:1px solid #c3c3c3;" onmousemove="cnvs_getCoordinates(event)" onmouseout="cnvs_clearCoordinates()">
+Your browser does not support the canvas element.
+</canvas>
+<!--
+<canvas id="myCanvas2" width="620" height="300" style="border:1px solid #c3c3c3;" onmousemove="cnvs_getCoordinates(event)" onmouseout="cnvs_clearCoordinates()">
+Your browser does not support the canvas element.
+</canvas>
+
+<canvas id="myCanvas4" width="620" height="300" style="border:1px solid #c3c3c3;" onmousemove="cnvs_getCoordinates(event)" onmouseout="cnvs_clearCoordinates()">
+Your browser does not support the canvas element.
+</canvas>
+-->
+<script type="text/javascript">
+
+/* canvas 绘圆形站点图*/
+var c=document.getElementById("myCanvas");
+var cxt=c.getContext("2d");
+cxt.moveTo(50,150);
+cxt.lineTo(550,150);
+cxt.stroke();
+cxt.fillStyle="#DC143C";
+cxt.beginPath();
+cxt.arc(150,150,15,0,Math.PI*2,true);
+cxt.closePath();
+cxt.fill();
+cxt.fillStyle="#DAA520";
+cxt.beginPath();
+cxt.arc(350,150,15,0,Math.PI*2,true);
+cxt.closePath();
+cxt.fill();
+cxt.fillStyle="#483D8B";
+cxt.beginPath();
+cxt.arc(50,150,15,0,Math.PI*2,true);
+cxt.arc(250,150,15,0,Math.PI*2,true);
+cxt.arc(450,150,15,0,Math.PI*2,true);
+cxt.arc(550,150,15,0,Math.PI*2,true);
+cxt.closePath();
+cxt.fill();
+
+/* canvas2 图片站点图
+var c2=document.getElementById("myCanvas2");
+var cxt2=c2.getContext("2d");
+cxt2.moveTo(50,150);
+cxt2.lineTo(550,150);
+cxt2.stroke();
+var img=new Image();
+img.src="blue.png";
+var img2=new Image();
+img2.src="yellow.png";
+cxt2.drawImage(img,20,120);
+cxt2.drawImage(img,150,120);
+cxt2.drawImage(img2,280,120);
+cxt2.drawImage(img,410,120);
+var img3=new Image();
+img3.src="red.png";
+cxt2.drawImage(img3,540,120);
+*/
+/* canvas3 绘圆形站点图 */
+var c3=document.getElementById("myCanvas3");
+var cxt3=c3.getContext("2d");
+cxt3.moveTo(50,150);
+cxt3.lineTo(150,150);
+cxt3.lineTo(350,100);
+cxt3.lineTo(450,150);
+cxt3.lineTo(550,150);
+cxt3.stroke();
+cxt3.fillStyle="#DC143C";
+cxt3.beginPath();
+cxt3.arc(350,100,15,0,Math.PI*2,true);
+cxt3.closePath();
+cxt3.fill();
+cxt3.fillStyle="#DAA520";
+cxt3.beginPath();
+cxt3.arc(250,126,15,0,Math.PI*2,true);
+cxt3.closePath();
+cxt3.fill();
+cxt3.fillStyle="#483D8B";
+cxt3.beginPath();
+cxt3.arc(50,150,15,0,Math.PI*2,true);
+cxt3.arc(150,150,15,0,Math.PI*2,false);
+cxt3.arc(450,150,15,0,Math.PI*2,true);
+cxt3.arc(550,150,15,0,Math.PI*2,true);
+cxt3.closePath();
+cxt3.fill();
+
+/* canvas4 图片站点图
+var c4=document.getElementById("myCanvas4");
+var cxt4=c4.getContext("2d");
+cxt4.moveTo(50,150);
+cxt4.lineTo(180,150);
+cxt4.lineTo(350,100);
+cxt4.lineTo(450,150);
+cxt4.lineTo(550,150);
+cxt4.stroke();
+cxt4.drawImage(img,20,120);
+cxt4.drawImage(img,156,114);
+cxt4.drawImage(img2,310,64);
+cxt4.drawImage(img,410,120);
+cxt4.drawImage(img3,540,120);
+*/
+/* 背景渐变*/
+var grd=cxt.createLinearGradient(0,0,50,100);
+grd.addColorStop(0,"#ffdddd");
+grd.addColorStop(1,"#ffffff");
+cxt.fillStyle=grd;
+cxt.fillRect(0,0,500,100);
+cxt2.fillStyle=grd;
+cxt2.fillRect(0,0,500,100);
+//cxt3.fillStyle=grd;
+//cxt3.fillRect(0,0,500,100);
+//cxt4.fillStyle=grd;
+//cxt4.fillRect(0,0,500,100);
+
+/* 获取鼠标所在的坐标*/
+function cnvs_getCoordinates(e){
+x=e.clientX;
+y=e.clientY;
+document.getElementById("xy").innerHTML="鼠标所在坐标: (" + x + "," + y + ")";
+}
+ 
+function cnvs_clearCoordinates(){
+document.getElementById("xy").innerHTML="";
+}
+</script>
+<div id="xy"></div>
+</body>
+</html>
