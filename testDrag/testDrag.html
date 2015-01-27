@@ -1,27 +1,16 @@
 <!DOCTYPE HTML>
-<html>
+
+<!-- HTML 5 应用程序缓存 -->
+<html  manifest="demo.appcache">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
 #div1 {width:488px;height:100px;padding:10px;border:1px solid #aaaaaa;}
 </style>
-<script type="text/javascript">
-function allowDrop(ev){
-ev.preventDefault();
-}
 
-function drag(ev){
-ev.dataTransfer.setData("Text",ev.target.id);
-}
-
-function drop(ev){
-ev.preventDefault();
-var data=ev.dataTransfer.getData("Text");
-ev.target.appendChild(document.getElementById(data));
-}
-</script>
 </head>
 <body>
+<script type="text/javascript" src="demo.js"></script>
 
 <p>请把图片拖放到矩形中：</p>
 
