@@ -12,6 +12,7 @@ else
   }
 document.write("<br/>Visits "+ localStorage.pagecount + " time(s).");
 
+/* HTML 5 拖放*/
 function allowDrop(ev){
 ev.preventDefault();
 }
@@ -24,4 +25,29 @@ function drop(ev){
 ev.preventDefault();
 var data=ev.dataTransfer.getData("Text");
 ev.target.appendChild(document.getElementById(data));
+}
+/*html 5 web worker 是运行在后台的 JavaScript，不会影响页面的性能*/
+var w;
+
+function startWorker()
+{
+if(typeof(Worker)!=="undefined")
+  {
+  if(typeof(w)=="undefined")
+  {
+  w=new Worker("demo.js");
+  }
+  w.onmessage = function (event) {
+    document.getElementById("result").innerHTML=event.data;
+    };
+  }
+else
+  {
+  document.getElementById("result").innerHTML="Sorry, your browser does not support Web Workers...";
+  }
+}
+
+function stopWorker()
+{ 
+w.terminate();
 }
