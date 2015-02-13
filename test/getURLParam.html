@@ -24,7 +24,6 @@
 	urls = Request['urls'];
 	alert(email+urls);
 	
-	
 	//正则式方式
 	function getURLParam2(name) {
 		var value = location.search.match(new RegExp("[?&]" + name + "=([^&]*)(&?)","i"));
@@ -32,17 +31,13 @@
 	}	
 
 	alert(getURLParam2('email'));
-
 	alert(getURLParam2('urls'));
 
 </Script>
 	</head>
 	<body>
 	<form>
-	<!--
-		<input name="email" type="email" value="test@test.com"/>
-        <input name="urls" type="url" value="http://www.baidu.com/"/>
-		-->
+	
 		<input name="email" type="text" value="test@test.com"/>
         <input name="urls" type="text" value="http://www.baidu.com/"/>
         <input type="submit" value="提交"/>
