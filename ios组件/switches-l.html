@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="no" />
+<meta name="apple-mobile-web-app-status-bar-style" content="no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>switches-l</title>
+<link rel="stylesheet" type="text/css" href="css/switches-l.css">
+</head>
+
+<body>
+   <p>Switches:</p>
+   <div class="switches">
+      <div class="switches-btn"></div>
+   </div>
+   <script type="text/javascript" src="js/zepto.min.js"></script>
+   <script type="text/javascript">
+   	$(".switches").on('click', function () {
+		var _this = $(this);
+		var block = $('.switches-btn');
+		if (_this.hasClass('on')&&block.hasClass('btn-on')) {
+			_this.removeClass('on');
+			block.removeClass('btn-on');
+		}else{
+			_this.addClass('on');
+			block.addClass('btn-on');
+		}
+	    
+	});
+
+   </script>
+</body>
+</html>
