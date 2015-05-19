@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="no" />
+<meta name="apple-mobile-web-app-status-bar-style" content="no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Radiobox-l-img</title>
+<link rel="stylesheet" type="text/css" href="css/radiobox-l-img.css">
+</head>
+
+<body>
+   <p>Radiobox-l-img:</p>
+   <div class="radiogrounp-l">
+   	<div class="radiobox-l">
+	   	<div class="raido-img-l img-on-l">
+	   		<img src="images/kitty.jpg">
+	   	</div>
+	   	<span>男</span>
+	   	<div class="radio-btns-l on-l">
+	   		<div class="radio-btn-l btn-on-l"></div>
+	   	</div>
+   	</div>
+   	<div class="radiobox-l">
+	   	<div class="raido-img-l">
+	   		<img src="images/kitty.jpg">
+	   	</div>
+	   	<span>女</span>
+	   	<div class="radio-btns-l">
+	   		<div class="radio-btn-l"></div>
+	   	</div>
+   	</div>
+   	
+   </div>
+   <script type="text/javascript" src="js/zepto.min.js"></script>
+   <script type="text/javascript">
+	//radiobox-l-img
+	$(".radiobox-l").on('click', function () {
+	    var _this = $(this);
+		var block = _this.parent().parent();
+		$(block).find('.raido-img-l').removeClass('img-on-l');
+		$(block).find('.radio-btns-l').removeClass('on-l');
+		$(block).find('.radio-btn-l').removeClass('btn-on-l');
+		$(_this).find('.raido-img-l').addClass('img-on-l');
+		$(_this).find('.radio-btns-l').addClass('on-l');
+		$(_this).find('.radio-btn-l').addClass('btn-on-l');
+	});
+   </script>
+</body>
+</html>

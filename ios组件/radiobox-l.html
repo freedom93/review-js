@@ -6,31 +6,43 @@
 <meta name="apple-mobile-web-app-capable" content="no" />
 <meta name="apple-mobile-web-app-status-bar-style" content="no" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>switches-l</title>
+<title>Radiobox-l</title>
 <link rel="stylesheet" type="text/css" href="css/radiobox-l.css">
 </head>
 
 <body>
    <p>Radiobox:</p>
    <div class="radiobox">
-      <ul>
-        <li>
-          <div class="radio-btn checkedRadio">
-            <i>
-              <input type="radio" name="radio-btn" checked/>
-            </i>
-          </div>
-          <span>男</span>
-        </li>
-        <li>
-          <div class="radio-btn">
-            <i>
-              <input type="radio" name="radio-btn"/>
-            </i>
-          </div>
-          <span>女</span>
-        </li>
-    </ul>
+	    <ul>
+	        <li>
+	          <div class="radio-btn checkedRadio">
+	            <i>
+	              <input type="radio" name="radio-btn" checked/>
+	            </i>
+	          </div>
+	          <span>男</span>
+	        </li>
+	        <li>
+	          <div class="radio-btn">
+	            <i>
+	              <input type="radio" name="radio-btn"/>
+	            </i>
+	          </div>
+	          <span>女</span>
+	        </li>
+	    </ul>
+   </div>
+   <br><br><br><br>
+   <p>Radiobox-l:</p>
+   <div class="radiogrounp-l">
+   	<div class="radio-btns-l on-l">
+   		<div class="radio-btn-l btn-on-l"></div>
+   	</div>
+   	<span>男</span>
+   	<div class="radio-btns-l">
+   		<div class="radio-btn-l"></div>
+   	</div>
+   	<span>女</span>
    </div>
    <script type="text/javascript" src="js/jquery.js"></script>
    <script type="text/javascript">
@@ -42,6 +54,15 @@
 	    block.find(".radio-btn").removeClass('checkedRadio');
 	    _this.addClass('checkedRadio');
 	    _this.find('input:radio').attr('checked', true);
+	});
+	//radiobox-l
+	$(".radio-btns-l").on('click', function () {
+	    var _this = $(this);
+		var block = _this.parent().parent();
+		$(_this).siblings().removeClass('on-l');
+		$(block).find('.radio-btn-l').removeClass('btn-on-l');
+		$(_this).addClass('on-l');
+		$(_this).find('.radio-btn-l').addClass('btn-on-l');
 	});
    </script>
 </body>

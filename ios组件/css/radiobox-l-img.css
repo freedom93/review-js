@@ -1,0 +1,76 @@
+/* Needless Page Decoration */
+body {
+   -webkit-user-select: none;
+   cursor: default;
+   font-family: "WenQuanYi Micro Hei", "Microsoft YaHei",
+      "Hiragino Sans GB", sans-serif;
+   color: rgba(0, 0, 0, 0.77);
+   font-weight: 200;
+   padding-left: 30px;
+   padding-top: 0px;
+   background: -webkit-linear-gradient(top, #f2fbff 0%, #ffffff 64%) no-repeat;
+   background: -moz-linear-gradient(top, #f2fbff 0%, #ffffff 64%) no-repeat;
+   background: -ms-linear-gradient(top, #f2fbff 0%, #ffffff 64%) no-repeat;
+   background: linear-gradient(to bottom, #f2fbff 0%, #ffffff 64%) no-repeat;
+}
+
+/* radiobox-l */
+.radiogrounp-l{
+   width: 400px;
+   height: 80px;
+   border: 1px solid #ff8900;
+}
+.radiogrounp-l .radiobox-l:first-child{
+  margin: 16px 0 0 16px;
+}
+.radiogrounp-l .radiobox-l:last-child{
+  position: relative;
+  float: right;
+   margin: 0 16px 0 0;
+}
+.radiobox-l .raido-img-l{
+   width: 48px;
+   height: 48px;
+   border: 2px solid #999;
+   border-radius: 8px;
+   position: relative;
+   float: left;
+}
+.radiobox-l .img-on-l{
+   border: 2px solid #ff8900;
+}
+.radiobox-l .raido-img-l img{
+  height: 40px;
+  margin: 4px;
+}
+.radiobox-l span{
+   position: relative;
+   float: left;
+   margin: 16px 20px;
+}
+.radiobox-l .radio-btns-l{
+   width: 16px;
+   height: 16px;
+   -webkit-border-radius: 100%;
+   -moz-border-radius: 100%;
+   border-radius: 100%;
+   border: 4px solid #ccc;
+   position: relative;
+   float: left;
+   margin: 16px 0;
+}
+.radiobox-l .on-l{
+   border: 4px solid #ff8900;
+}
+.radiobox-l .radio-btn-l{
+   width: 12px;
+   height: 12px;
+   -webkit-border-radius: 100%;
+   -moz-border-radius: 100%;
+   border-radius: 100%;
+   border: 2px solid #fff;
+   background: #eee;
+}
+.radiobox-l .btn-on-l{
+   background: #ff8900;
+}
