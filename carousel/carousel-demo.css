@@ -1,0 +1,52 @@
+/* Needless Page Decoration */
+body {
+   -webkit-user-select: none;
+   cursor: default;
+   font: 18px "Microsoft YaHei";
+   color: rgba(0, 0, 0, 0.77);
+   font-weight: 200;
+   background: -webkit-linear-gradient(top, #f2fbff 0%, #ffffff 64%) no-repeat;
+   background: -moz-linear-gradient(top, #f2fbff 0%, #ffffff 64%) no-repeat;
+   background: -ms-linear-gradient(top, #f2fbff 0%, #ffffff 64%) no-repeat;
+   background: linear-gradient(to bottom, #f2fbff 0%, #ffffff 64%) no-repeat;
+}
+#owl-expression{
+  /*border: 1px solid #FF8900;*/
+  padding: 20px 0 20px 10px;
+}
+.expression{
+  width: 20%;
+  position: relative;
+  float: left;
+}
+.expression .expression-p{
+    height: 48px;
+    width: 48px;
+    border:2px solid #999999;
+    border-radius: 8px;
+    position: relative;
+    float: left;
+    /*margin-top: -10px;*/
+    color: #999999;
+}
+.expression .expression-p p{
+   color: #666666;
+   line-height: 15px;
+   text-align: center;
+}
+.expression .expression-img{
+    height: 32px;
+    width: 32px;
+    border:2px solid #999999;
+    border-radius: 8px;
+    padding: 8px;
+    position: relative;
+    float: left;
+    /*margin-top: -10px;*/
+}
+.expression .expression-img img{
+   height: 32px;
+}
+.expression .on{
+    border:2px solid #ff8900;
+}
