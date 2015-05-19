@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="no" />
+<meta name="apple-mobile-web-app-status-bar-style" content="no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>switches-l</title>
+<link rel="stylesheet" type="text/css" href="css/radiobox-l.css">
+</head>
+
+<body>
+   <p>Radiobox:</p>
+   <div class="radiobox">
+      <ul>
+        <li>
+          <div class="radio-btn checkedRadio">
+            <i>
+              <input type="radio" name="radio-btn" checked/>
+            </i>
+          </div>
+          <span>男</span>
+        </li>
+        <li>
+          <div class="radio-btn">
+            <i>
+              <input type="radio" name="radio-btn"/>
+            </i>
+          </div>
+          <span>女</span>
+        </li>
+    </ul>
+   </div>
+   <script type="text/javascript" src="js/jquery.js"></script>
+   <script type="text/javascript">
+    //radiobox
+	$(".radio-btn").on('click', function () {
+	    var _this = $(this),
+	    block = _this.parent().parent();
+	    block.find('input:radio').attr('checked', false);
+	    block.find(".radio-btn").removeClass('checkedRadio');
+	    _this.addClass('checkedRadio');
+	    _this.find('input:radio').attr('checked', true);
+	});
+   </script>
+</body>
+</html>
