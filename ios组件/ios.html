@@ -33,6 +33,11 @@
          <span>女</span>
       </div>
    </div>
+   <br><br>
+   <!-- 锁屏 -->
+   <p>btn-orange:</p>
+   <div class="btn">锁屏</div>
+   <div id="floatBg" class="freebg"></div>
    <script type="text/javascript" src="js/zepto.min.js"></script>
    <script type="text/javascript">
       //Switches-l
@@ -57,6 +62,21 @@
          $(_this).addClass('on-l');
          $(_this).find('.radio-btn-l').addClass('btn-on-l');
       });
+      //锁屏
+      function lockBg(){
+         if($("#floatBg").hasClass("freebg")){
+             $("#floatBg").css("display","block");
+             $("#floatBg").removeClass("freebg");
+             $(".btn").html("解屏");
+           }else{
+             $("#floatBg").css("display","none");
+             $("#floatBg").addClass("freebg");
+             $(".btn").html("锁屏");
+           };
+       }
+        $(".btn").on('click', function () {
+            lockBg();
+        });
    </script>
 
 </body>

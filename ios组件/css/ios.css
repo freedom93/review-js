@@ -43,12 +43,12 @@ a:visited {
 }
 
 a:hover {
-   text-decoration: underline;
+   text-decoration: none;
    color: #f06;
 }
 
 a:active {
-   text-decoration: underline;
+   text-decoration: none;
 }
 
 /* IOS Switches */
@@ -129,4 +129,37 @@ a:active {
 }
 .btn-on-l{
    background: #ff8900;
+}
+
+.btn{
+   width: 100px;
+   height: 40px;
+   line-height: 40px;
+   text-align: center;
+   border: 1px solid #ff6500;
+   background: #ff7600;
+   border-radius: 4px;
+   color: #ffffff;
+    /*让按钮浮出锁屏之外*/
+   position: fixed;
+   _position: absolute;
+   z-index: 1002;
+}
+.btn:hover{
+   background: #ff6500;
+}
+/* 锁屏 */
+#floatBg{
+  position: fixed;
+  _position: absolute;
+  float: left;
+  display: none;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  filter: alpha(opacity=60);
+  opacity: 0.6;
 }
