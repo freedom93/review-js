@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+	<title>marquee</title>
+	<style type="text/css">
+	p{
+		margin:0;
+	}
+		.moreHide{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+		.test{
+			font-size: 14px;
+			width: 300px;
+			height: 60px;
+			border: 1px solid #ff0000;
+			overflow: auto;
+			white-space: nowrap;
+			text-overflow:ellipsis;
+			overflow:scroll;
+			overflow-x:hidden;
+			overflow-y:hidden;
+		}
+	</style>
+</head>
+<body>
+	<div class="test"><p>1一二三四五六七八九十2一二三四五六七八九十3一二三四五六七八九十4一二三四五六七八九十0</p></div>
+	<p  id="test" style="display:none">1一二三四五六七八九十2一二三四五六七八九十3一二三四五六七八九十4一二三四五六七八九十0</p>
+	
+</body>
+<script type="text/javascript" src="jquery-1.8.0.min.js"></script>
+<script type="text/javascript">
+(function($) {
+	var _this = $('.test');
+	var t = 0;
+	var interTime = 60;
+	console.log($("#test").width());
+	t=setInterval(autoPlay,interTime);
+	function autoPlay(){
+			console.log(t);
+		var a=_this.scrollLeft()+1;
+		var pl = _this.width();
+		var pwl = $('#test').width();
+		console.log(pl+"----"+pwl);
+			if(_this.scrollLeft()>=(pwl-pl)){
+				_this.scrollLeft(0);
+			}else{
+				_this.scrollLeft(a);
+			}
+		}
+
+	_this.bind('mouseover',function(){
+		clearInterval(t);
+		t = 0;
+	});
+	_this.bind('mouseout',function(){
+		console.log(2);	
+		t=setInterval(autoPlay,interTime);			 
+	});
+})(jQuery);
+
+
+</script>
+</html>
