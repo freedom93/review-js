@@ -18,49 +18,64 @@
 			width: 300px;
 			height: 60px;
 			border: 1px solid #ff0000;
-			overflow: auto;
 			white-space: nowrap;
 			text-overflow:ellipsis;
-			overflow:scroll;
+			overflow: scroll;
 			overflow-x:hidden;
 			overflow-y:hidden;
 		}
 	</style>
 </head>
 <body>
-	<div class="test"><p>1一二三四五六七八九十2一二三四五六七八九十3一二三四五六七八九十4一二三四五六七八九十0</p></div>
-	<p  id="test" style="display:none">1一二三四五六七八九十2一二三四五六七八九十3一二三四五六七八九十4一二三四五六七八九十0</p>
+	<div class="test">
+		<p>1一二三四五六七八九十一二三四五六七八九十一二三四五1</p>
+	</div>
 	
 </body>
 <script type="text/javascript" src="jquery-1.8.0.min.js"></script>
 <script type="text/javascript">
 (function($) {
 	var _this = $('.test');
-	var t = 0;
-	var interTime = 60;
-	console.log($("#test").width());
+	var pl = _this.width();
+	var fs = Number(_this.css("font-size").split('px')[0]);
+	var pwl = _this.find('p').text();
+	console.log(pl+"--"+fs+"--"+pwl.length*fs);
+	var t = null;
+	var interTime = 20;
+	if(_this.scrollLeft()>=pwl-pl) {
+		clearInterval(t);
+		t = null;
+		return false;
+	}  
+	$(_this.find('p').html()).appendTo(_this.find('p'));
+	_this.scrollLeft(0);
+	if(!!t){
+		clearInterval(t);
+		t = null;
+	} 
+	$(_this.find('p').html()).appendTo(_this.find('p'));
 	t=setInterval(autoPlay,interTime);
 	function autoPlay(){
-			console.log(t);
+		// console.log(pl+"--"+fs+"--"+pwl.length*fs);
 		var a=_this.scrollLeft()+1;
-		var pl = _this.width();
-		var pwl = $('#test').width();
-		console.log(pl+"----"+pwl);
-			if(_this.scrollLeft()>=(pwl-pl)){
+		console.log(a);
+			if(_this.scrollLeft()>=pwl-pl){
 				_this.scrollLeft(0);
 			}else{
 				_this.scrollLeft(a);
 			}
 		}
-
-	_this.bind('mouseover',function(){
-		clearInterval(t);
-		t = 0;
-	});
-	_this.bind('mouseout',function(){
-		console.log(2);	
-		t=setInterval(autoPlay,interTime);			 
-	});
+		setTimeout(function(){
+			t=clearInterval(t);
+		},2000);
+	
+	// _this.bind('mouseover',function(){
+	// 	clearInterval(t);
+	// 	t = 0;
+	// });
+	// _this.bind('mouseout',function(){
+	// 	t=setInterval(autoPlay,interTime);	
+	// });
 })(jQuery);
 
 

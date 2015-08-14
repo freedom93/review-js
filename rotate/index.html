@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>rotate</title>
+<style>
+* {
+	padding: 0;
+	margin: 0
+}
+body {
+	text-align: center
+}
+.ly-plate {
+	position: relative;
+	width: 509px;
+	height: 509px;
+	margin: 50px auto;
+}
+.rotate-bg {
+	width: 509px;
+	height: 509px;
+	background: url(images/plate.png);
+	position: absolute;
+	top: 0;
+	left: 0
+}
+/*.light1 {
+	width: 509px;
+	height: 509px;
+	background: url(light1.png);
+	position: absolute;
+	top: 0;
+	left: 0
+}
+.light2 {
+	width: 509px;
+	height: 509px;
+	background: url(light2.png);
+	position: absolute;
+	top: 0;
+	left: 0
+}*/
+.ly-plate div.lottery-star {
+	width: 220px;
+	height: 220px;
+	position: absolute;
+	top: 144px;
+	left: 143px;
+	+left: 142px;	
+	outline: none;
+}
+.ly-plate div.lottery-star #lotteryBtn {
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+ 	*left:-107px
+}
+
+.rotate-bg div span{
+	display: block;
+}
+.rotate-bg div img{
+	width: 80px;
+	margin: 0 20px;
+}
+.rotate-bg div{
+	position: absolute;
+}
+.giftitem1{
+	top: 60px;
+	left: 135px;
+}
+.giftitem2{
+	top: 60px;
+	right: 135px;
+}
+.giftitem3{
+	top: 140px;
+	left: 50px;
+}
+.giftitem4{
+	top: 140px;
+	right: 50px;
+}
+.giftitem5{
+	top: 260px;
+	left: 40px;
+}
+.giftitem6{
+	top: 260px;
+	right: 40px;
+}
+.giftitem7{
+	bottom: 60px;
+	left: 135px;
+}
+.giftitem8{
+	bottom: 60px;
+	right: 135px;
+}
+</style>
+</head>
+<body>
+<div class="ly-plate">
+  <div class="rotate-bg">
+  	<div class="giftitem1">
+  		<img src="images/gift4.png"><span>礼物4</span>
+    </div>
+    <div class="giftitem2">
+  		<img src="images/gift5.png"><span>礼物5</span>
+  	</div>
+  	<div class="giftitem3">
+  		<img src="images/gift3.png"><span>礼物3</span>
+  	</div>
+  	<div class="giftitem4">
+  		<img src="images/gift6.png"><span>礼物6</span>
+  	</div>
+  	<div class="giftitem5">
+  		<img src="images/gift2.png"><span>礼物2</span>
+  	</div>
+  	<div class="giftitem6">
+  		<img src="images/gift7.png"><span>礼物7</span>
+  	</div>
+  	<div class="giftitem7">
+  		<img src="images/gift1.png"><span>礼物1</span>
+  	</div>
+  	<div class="giftitem8">
+  		<img src="images/gift8.png"><span>礼物8</span>
+  	</div>
+  </div>
+  <!-- 周边流光 -->
+  <!-- <div id="light"></div> -->
+  <div class="lottery-star"><img src="images/rotate-pointer.png" id="lotteryBtn"></div>
+</div>
+<div class="result"></div>
+</body>
+<script src="http://libs.useso.com/js/jquery/1.7.2/jquery.min.js"></script>
+<script src="jQueryRotate.2.2.js"></script>
+<script src="jquery.easing.min.js"></script>
+<script>
+$(function(){
+	var timeOut = function(){  //超时函数
+		$("#lotteryBtn").rotate({
+			angle:0, 
+			duration: 10000, 
+			animateTo: 2160, //这里是设置请求超时后返回的角度，所以应该还是回到最原始的位置，2160是因为我要让它转6圈，就是360*6得来的
+			callback:function(){
+				alert('网络超时')
+			}
+		}); 
+	}; 
+	var rotateFunc = function(awards,angle,text){  //awards:奖项，angle:奖项对应的角度
+		$('#lotteryBtn').stopRotate();
+		console.log(awards,angle,text);
+		$("#lotteryBtn").rotate({
+			angle:0, 
+			duration: 5000, 
+			animateTo: angle+2160, //angle是图片上各奖项对应的角度，1440是我要让指针旋转4圈。所以最后的结束的角度就是这样子^^
+			callback:function(){
+				// alert(text)
+				$('.result').show().text('恭喜你抽了了奖品：'+text);
+				setTimeout(function(){
+					$('.result').hide();
+				},2000);
+			}
+		}); 
+	};
+	
+	$("#lotteryBtn").rotate({ 
+	   bind: 
+		 { 
+			click: function(){
+				var time = [0,1];
+					time = time[Math.floor(Math.random()*time.length)];
+				if(time==0){
+					timeOut(); //网络超时
+				}
+				var time = 1;
+				if(time==1){
+					var data = [1,2,3,4,5,6,7,8]; //返回的数组
+						data = data[Math.floor(Math.random()*data.length)];
+					// data=3;
+					switch(data){
+						case 1:rotateFunc(1,22,'礼物1');break;
+						case 2:rotateFunc(2,67,'礼物2');break;
+						case 3:rotateFunc(3,112,'礼物3');break;
+						case 4:rotateFunc(4,157,'礼物4');break;
+						case 5:rotateFunc(5,202,'礼物5');break;
+						case 6:rotateFunc(6,247,'礼物6');break;
+						case 7:rotateFunc(7,292,'礼物7');break;
+						case 8:rotateFunc(8,337,'礼物8');break;
+					}
+				}
+			}
+		 } 
+	   
+	});
+// 周边流光
+	Light(1000);
+	function Light(flickerSpeed) {
+		var isLight = false;
+		function shining(){
+			if(!isLight){
+				isLight = true;
+				$('#light').addClass('light1');
+				$('#light').removeClass('light2');
+			}
+			else{
+				isLight = false;
+				$('#light').addClass('light2');
+				$('#light').removeClass('light1');
+			}
+		}
+		clrTimer = setInterval(shining,flickerSpeed);
+	}
+	
+})
+</script>
+</html>
