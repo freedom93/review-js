@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>两榜简详情缩放</title>
+<link type="text/css" rel="stylesheet" href="change.css"/>
+</head>
+<body>
+    <div class="accord">
+       <ul class="accordLi">
+          <li class="leftAcc bigW">
+            <dl>
+              <dd>
+                <div class="bigContent">
+                  <h2>榜1</h2>
+                  <table class="bigTable" id="bigTableLeft">
+                  </table>
+                </div>
+              </dd>
+              <dd class="hideDiv">
+                <div class="smallContent">
+                  <h2>榜1</h2>
+                  <table class="smallTable" id="smallTableLeft">
+                  </table>
+                </div>
+              </dd>
+            </dl>   
+          </li>
+          <li class="rightAcc smallW">
+            <dl>
+              <dd class="hideDiv">
+                <div class="bigContent">
+                <h2>榜2</h2>
+                  <table  class="bigTable" id="bigTableRight">
+                  </table>
+                </div>
+              </dd>
+              <dd>
+                <div class="smallContent">
+                  <h2>榜2</h2>
+                  <table class="smallTable" id="smallTableRight">
+                  </table>
+                </div>
+              </dd>
+            </dl>           
+          </li>
+       </ul>
+    </div>
+          
+</body>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="changeData.js"></script>
+<script type="text/javascript" src="change.js"></script>
+<script type="text/javascript">
+  
+  $(function(){
+     changeDataJS.bigTable('#bigTableLeft');
+     changeDataJS.bigTable('#bigTableRight');
+     changeDataJS.smallTable('#smallTableLeft');
+     changeDataJS.smallTable('#smallTableRight');
+	   changeJS.toggleDiv(300,150,700); //bigWidth,smallWidth,speed
+	 })
+</script>
+</html>

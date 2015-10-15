@@ -1,0 +1,109 @@
+  @charset "utf-8";
+  /*CSS reset*/ 
+  body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td{ margin: 0; padding: 0; }
+  table { border-collapse: collapse; border-spacing: 0; }
+  fieldset, img { border: 0 }
+  address, caption, cite, code, dfn, em, strong, th, var { font-style: normal; font-weight: normal }
+  th{font-weight:bold;}
+  article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display:block;}
+  ol, ul { list-style: none }
+  h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal }
+  .moreHide{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .accord{
+    font-family: '微软雅黑';
+    font-size: 14px;
+    width:460px;
+    height:520px;
+    margin:10px 0px 0px 10px; 
+    border:1px solid #c2c2c2;
+    background: #f6f6f6;
+  }
+  .accord .accordLi{
+    list-style: none;
+    width:460px;
+    height:520px;
+    position:relative; 
+  } 
+  .accord .accordLi li{
+    display: inline-block;
+  }
+  .accord .leftAcc{
+    position:absolute;
+    top:0px;
+    left:0px; 
+    }
+  .accord .rightAcc{
+    position:absolute;
+    top:0px;
+    right:0px;  
+  }
+  .accord dl div{
+    display:block; 
+  } 
+  .accord .bigW{
+    width:300px;
+    height:520px;
+    position:relative;
+    overflow:hidden;  
+  }
+  .accord .smallW{
+    width:150px;
+    height:520px;
+    position:relative;
+    overflow:hidden;  
+  }
+  .accord dl .hideDiv{
+   display:none;
+   position:absolute;
+   top:0px;
+   left:0px;
+  }
+  .bigContent{
+    width: 298px;
+    height: 520px;
+    background: #f6f6f6;
+    border:1px solid #c2c2c2;
+  }
+  .smallContent{
+    width: 148px;
+    height: 520px;
+    background: #f6f6f6;
+    border:1px solid #c2c2c2;
+  }
+  .accord dl h2{
+    text-align: center;
+  }
+  td{
+    height: 50px;
+    text-indent: 10px;
+    position: relative;
+  }
+  tr td:first-child{
+    text-align: center;
+  }
+  td img{
+    height: 42px;
+    width: 56px;
+    margin:4px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  td .bName{
+    display: block;
+    width: 98%;
+    text-indent: 68px;
+    overflow: hidden;
+  }
+  td .sName{
+    display: block;
+    width: 106px;
+    overflow: hidden;
+  }
+  .opacity{
+    background: #EBEBEB;
+  }
+.w60{width: 60px;}
+.w180{width: 180px;}
+.w80{width: 80px;}
+.w90{width: 90px;}
