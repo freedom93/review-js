@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <link rel="stylesheet" href="css/bugSet.min.css" />
+    <title>bug</title>
+</head>
+<body>
+<div class="index-con">
+    <div class="banner">
+        <img src="images/host.jpg" alt="host" class="hostImg">
+        <span class="hostName">Demo</span>
+        <span class="setting">Home</span>
+    </div>
+    <div class="warnSet">
+      <h2>告警配置</h2>
+      <h4>实时警告<i class="selected"></i></h4>
+    </div>
+    <div id='warnCon' class="warnCon">
+      <p>在最近一小时内</p>
+      <p>若版本的影响用户数><input id="usercnt" class="unEdit" disabled="true" type="text" value="0"></p>
+      <p>且对比前7天相同时段的平均值波动><input id="percent" class="unEdit" disabled="true" type="text" value="0">%</p>
+      <p>则微信通知<input id="notify" disabled="true" class="unEdit wxName" type="text" value=""></p>
+      <a class="editBtn" href="javascript:void(0);" flag="0">编辑</a>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/bugJson.js"></script>
+<script type="text/javascript" src="js/bugSet.js"></script>
+</body>
+</html>
