@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <meta http-equiv="Cache-Control"content="max-age=60"/>
+    <meta name="flexible" content="maximum-dpr=1" />
+	<title>3D Carousel</title>
+	<script type="text/javascript" src="js/viewpoint.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/styles.css" media="screen">
+</head>
+
+<body>
+	<div id="wide-wrapper">
+		
+		<ul id="carousel">
+			<a href=""><img class="carousel-item" src="images/demo.png"></a>
+			<a href=""><img class="carousel-item" src="images/demo.png"></a>
+			<a href=""><img class="carousel-item" src="images/demo.png"></a>
+			<a href=""><img class="carousel-item" src="images/demo.png"></a>
+			<a href=""><img class="carousel-item" src="images/demo.png"></a>
+			<a href=""><img class="carousel-item" src="images/demo.png"></a>
+			<a href=""><img class="carousel-item" src="images/demo.png"></a>
+			<a href=""><img class="carousel-item" src="images/demo.png"></a>
+		</ul>
+			
+    </div>
+	
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="js/freedom.carousel.js"></script>
+
+<script type="text/javascript">
+
+	jQuery(document).ready(function($){
+		$('#carousel').carousel({width: 700, 
+								 height: 450, 
+								 itemWidth:20, 
+								 itemNum:8,
+								 horizontalRadius:250, 
+								 verticalRadius:150, 
+								 resize:false, 
+								 mouseScroll:false, 
+								 mouseDrag:true, 
+								 scaleRatio:0.4, 
+								 scrollbar:true, 
+								 tooltip:true, 
+								 mouseWheel:true, 
+								 mouseWheelReverse:true});
+		
+	});
+	
+</script>
+ 
+
+</body></html>
